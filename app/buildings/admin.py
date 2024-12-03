@@ -8,6 +8,7 @@ class HouseAdmin(admin.ModelAdmin):
     list_display = (
         "pk",
         "address",
+        "manage_org",
         "created_at",
         "updated_at",
     )

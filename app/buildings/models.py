@@ -13,6 +13,11 @@ class House(models.Model):
         unique=True,
         verbose_name="Адрес здания"
     )
+    manage_org = models.CharField(
+        max_length=255,
+        verbose_name="Управляющая организация",
+        help_text="Обязательное поле",
+    )
     cadastre_number = models.FloatField(
         default=0,
         null=True,
@@ -695,7 +700,7 @@ class House(models.Model):
     updated_at = models.DateTimeField(auto_now=True, editable=False, verbose_name="Дата обновления дома")
 
     def __str__(self):
-        return f"{self.pk} / {self.address}"
+        return f"[{self.pk}] {self.address} ({self.manage_org})"
 
     class Meta:
         verbose_name = "Тех. паспорт здания"
@@ -778,3 +783,6 @@ class Lift(models.Model):
 
     def __str__(self):
         return f"Лифт №{self.factory_number} - {self.house.address}"
+
+
+# House.objects.filter(id=1).only("id", "address")
