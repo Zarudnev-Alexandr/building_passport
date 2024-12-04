@@ -127,29 +127,31 @@ class House(models.Model):
     #     verbose_name="Дата проведения энергетического обследования"
     # )
     foundation_choice = (
-        (1, "монолитный"),
-        (2, "плавающий"),
-        (3, "ленточный"),
-        (4, "плитный"),
-        (5, "свайный"),
-        (6, "винтовые сваи"),
-        (7, "столбчатый"),
+        ("монолитный", "монолитный"),
+        ("плавающий", "плавающий"),
+        ("ленточный", "ленточный"),
+        ("плитный", "плитный"),
+        ("свайный", "свайный"),
+        ("винтовые сваи", "винтовые сваи"),
+        ("столбчатый", "столбчатый"),
     )
-    foundation_type = models.IntegerField(
+    foundation_type = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=foundation_choice,
         verbose_name="Тип фундамента"
     )
     foundation_material_choice = (
-        (1, "бутовый"),
-        (2, "бетонный"),
-        (3, "бутобетонный"),
-        (4, "железобетонный"),
+        ("бутовый", "бутовый"),
+        ("бетонный", "бетонный"),
+        ("бутобетонный", "бутобетонный"),
+        ("железобетонный", "железобетонный"),
     )
-    foundation_material = models.IntegerField(
+    foundation_material = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=foundation_material_choice, verbose_name="Материал фундамента"
     )
     paving_area = models.FloatField(
@@ -168,13 +170,14 @@ class House(models.Model):
         verbose_name="Год проведения последнего капитального ремонта "
     )
     internal_walls_type_choice = (
-        (1, "несущие"),
-        (2, "самонесущие"),
-        (3, "навесные"),
+        ("несущие", "несущие"),
+        ("самонесущие", "самонесущие"),
+        ("навесные", "навесные"),
     )
-    internal_walls_type = models.IntegerField(
+    internal_walls_type = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=internal_walls_type_choice,
         verbose_name="Тип внутренних стен"
     )
@@ -190,14 +193,15 @@ class House(models.Model):
         verbose_name="Физический износ, %"
     )
     external_walls_type_choice = (
-        (1, "несущие"),
-        (2, "самонесущие"),
-        (3, "ненесущие/фахверковые"),
-        (4, "навесные"),
+        ("несущие", "несущие"),
+        ("самонесущие", "самонесущие"),
+        ("ненесущие/фахверковые", "ненесущие/фахверковые"),
+        ("навесные", "навесные"),
     )
-    external_walls_type = models.IntegerField(
+    external_walls_type = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=external_walls_type_choice,
         verbose_name="Тип наружных стен"
     )
@@ -208,13 +212,14 @@ class House(models.Model):
         verbose_name="Материал наружных стен"
     )
     facade_insulation_type_choice = (
-        (1, "навесные вентилируемые"),
-        (2, "слоистой (колодцевой) кладки"),
-        (3, "штукатурные"),
+        ("навесные вентилируемые", "навесные вентилируемые"),
+        ("слоистой (колодцевой) кладки", "слоистой (колодцевой) кладки"),
+        ("штукатурные", "штукатурные"),
     )
-    facade_insulation_type = models.IntegerField(
+    facade_insulation_type = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=facade_insulation_type_choice,
         verbose_name="Тип наружного утепления фасада"
     )
@@ -235,29 +240,31 @@ class House(models.Model):
         verbose_name="Год проведения последнего капитального ремонта"
     )
     floor_type_choice = (
-        (1, "балочные"),
-        (2, "плитные"),
-        (3, "безбалочные"),
+        ("балочные", "балочные"),
+        ("плитные", "плитные"),
+        ("безбалочные", "безбалочные"),
     )
-    floor_type = models.IntegerField(
+    floor_type = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=floor_type_choice,
         verbose_name="Тип перекрытий"
     )
     floor_structure_choice = (
-        (1, "сборная"),
-        (2, "монолитная"),
-        (3, "сборно-монолитная"),
-        (4, "из дервянных балок"),
-        (5, "из металлических балок"),
-        (6, "железобетонные"),
+        ("сборная", "сборная"),
+        ("монолитная", "монолитная"),
+        ("сборно-монолитная", "сборно-монолитная"),
+        ("из дервянных балок", "из дервянных балок"),
+        ("из металлических балок", "из металлических балок"),
+        ("железобетонные", "железобетонные"),
     )
-    floor_structure = models.IntegerField(
+    floor_structure = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=floor_structure_choice,
-        verbose_name="Конструкция перекрытий "
+        verbose_name="Конструкция перекрытий"
     )
     floor_wear = models.FloatField(
         null=True,
@@ -265,17 +272,18 @@ class House(models.Model):
         verbose_name="Физический износ, %"
     )
     roof_shape_choice = (
-        (1, "односкатная"),
-        (2, "двускатная"),
-        (3, "четырехскатная"),
-        (4, "многоскатная"),
-        (5, "плоская"),
+        ("односкатная", "односкатная"),
+        ("двускатная", "двускатная"),
+        ("четырехскатная", "четырехскатная"),
+        ("многоскатная", "многоскатная"),
+        ("плоская", "плоская"),
     )
-    roof_shape = models.IntegerField(
+    roof_shape = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=floor_structure_choice,
-        verbose_name="Конструкция перекрытий "
+        verbose_name="Конструкция перекрытий"
     )
     roof_structure_type = models.CharField(
         null=True,
@@ -300,14 +308,15 @@ class House(models.Model):
         verbose_name="Утепляющие слои чердачных перекрытий"
     )
     roof_cover_type_choice = (
-        (1, "листовые материалы"),
-        (2, "мягкие покрытия"),
-        (3, "штучная отделка"),
-        (4, "наливная"),
+        ("листовые материалы", "листовые материалы"),
+        ("мягкие покрытия", "мягкие покрытия"),
+        ("штучная отделка", "штучная отделка"),
+        ("наливная", "наливная"),
     )
-    roof_cover_type = models.IntegerField(
+    roof_cover_type = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=roof_cover_type_choice,
         verbose_name="Тип кровли"
     )
@@ -418,16 +427,17 @@ class House(models.Model):
         verbose_name="Физический износ, %"
     )
     radiators_type_choice = (
-        (1, "радиаторы"),
-        (2, "конвекторы"),
-        (3, "полотенцесушители"),
-        (4, "стеновые панели"),
-        (4, "тёплые полы"),
-        (4, "инфракрасные излучатели"),
+        ("радиаторы", "радиаторы"),
+        ("конвекторы", "конвекторы"),
+        ("полотенцесушители", "полотенцесушители"),
+        ("стеновые панели", "стеновые панели"),
+        ("тёплые полы", "тёплые полы"),
+        ("инфракрасные излучатели", "инфракрасные излучатели"),
     )
-    radiators_type = models.IntegerField(
+    radiators_type = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=radiators_type_choice,
         verbose_name="Тип отопительных приборов "
     )
@@ -452,13 +462,14 @@ class House(models.Model):
         verbose_name="Год проведения последнего капитального ремонта"
     )
     cold_water_system_type_choice = (
-        (1, "хозяйственно-питьевая"),
-        (2, "противопожарная/производственная"),
-        (3, "совмещенная"),
+        ("хозяйственно-питьевая", "хозяйственно-питьевая"),
+        ("противопожарная/производственная", "противопожарная/производственная"),
+        ("совмещенная", "совмещенная"),
     )
-    cold_water_system_type = models.IntegerField(
+    cold_water_system_type = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=cold_water_system_type_choice,
         verbose_name="Тип внутридомовой инженерной системы холодного водоснабжения"
     )
@@ -516,12 +527,13 @@ class House(models.Model):
         verbose_name="Год проведения последнего капитального ремонта"
     )
     hot_water_system_type_choice = (
-        (1, "открытая"),
-        (2, "закрытая"),
+        ("открытая", "открытая"),
+        ("закрытая", "закрытая"),
     )
-    hot_water_system_type = models.IntegerField(
+    hot_water_system_type = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=hot_water_system_type_choice,
         verbose_name="Тип внутридомовой инженерной системы горячего водоснабжения "
     )
@@ -574,15 +586,22 @@ class House(models.Model):
         verbose_name="Год проведения последнего капитального ремонта"
     )
     wastewater_system_type_choice = (
-        (1, "централизованная канализация"),
-        (2, "выгребная яма"),
-        (3, "локальная канализация (септик)"),
+        ("централизованная канализация", "централизованная канализация"),
+        ("выгребная яма", "выгребная яма"),
+        ("локальная канализация (септик)", "локальная канализация (септик)"),
     )
-    wastewater_system_type = models.IntegerField(
+    wastewater_system_type = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=wastewater_system_type_choice,
         verbose_name="Тип внутридомовой инженерной системы водоотведения "
+    )
+    wastewater_system_material = models.CharField(
+        null=True,
+        blank=True,
+        max_length=200,
+        verbose_name="Материал теплоизоляции сети"
     )
     gas_last_repair_year = models.DateField(
         null=True,
@@ -590,12 +609,13 @@ class House(models.Model):
         verbose_name="Год проведения последнего капитального ремонта"
     )
     gas_system_type_choice = (
-        (1, "централизованная"),
-        (2, "автономная"),
+        ("централизованная", "централизованная"),
+        ("автономная", "автономная"),
     )
-    gas_system_type = models.IntegerField(
+    gas_system_type = models.CharField(
         null=True,
         blank=True,
+        max_length=255,
         choices=gas_system_type_choice,
         verbose_name="Тип внутридомовой инженерной системы газоснабжения"
     )
@@ -624,13 +644,28 @@ class House(models.Model):
         blank=True,
         verbose_name="Физический износ, %"
     )
+    resource_name_choice = (
+        ("ХВС", "ХВС"),
+        ("ГВС", "ГВС"),
+        ("Тепло", "Тепло"),
+        ("ГАЗ", "ГАЗ"),
+        ("Электро", "Электро"),
+    )
     resource_name = models.CharField(
         null=True,
         blank=True,
+        choices=resource_name_choice,
         max_length=200,
         verbose_name="Наименование коммунального ресурса, для измерения объемов "
-                     "поставки которого используется общедомовой прибор учета "
+                     "поставки которого используется общедомовой прибор учета"
     )
+    # resource_name = models.CharField(
+    #     null=True,
+    #     blank=True,
+    #     max_length=200,
+    #     verbose_name="Наименование коммунального ресурса, для измерения объемов "
+    #                  "поставки которого используется общедомовой прибор учета "
+    # )
     meter_brand = models.CharField(
         null=True,
         blank=True,
@@ -721,11 +756,13 @@ class Lift(models.Model):
         verbose_name="Номер подъезда, в котором расположен лифт (при наличии) "
     )
     lift_type_choice = (
-        (1, "пассажирский"),
-        (2, "грузовой"),
+        ("пассажирский", "пассажирский"),
+        ("грузовой", "грузовой"),
     )
-    lift_type = models.IntegerField(
-        default=0, choices=lift_type_choice,
+    lift_type = models.CharField(
+        default="пассажирский",
+        max_length=200,
+        choices=lift_type_choice,
         verbose_name="Тип лифта"
     )
     factory_number = models.CharField(
@@ -784,5 +821,3 @@ class Lift(models.Model):
     def __str__(self):
         return f"Лифт №{self.factory_number} - {self.house.address}"
 
-
-# House.objects.filter(id=1).only("id", "address")

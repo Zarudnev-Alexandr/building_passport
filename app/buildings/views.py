@@ -124,15 +124,15 @@ class LiftsViewSet(
 
 
 class BuildingsAPIViewSet(AllViewSet):
+    """Вся конкретная инфа об игре"""
     queryset = House.objects.prefetch_related("lift").all()
 
     def get_serializer_class(self):
-        if self.action == "list":
-            return BuildingsListSerializer
         return BuildingsDetailSerializer
 
 
 class BuildingMinInfoAPIViewSet(MinViewSet):
+    """Выводим список всех зданий"""
     queryset = House.objects.only("id", "address")
 
     def get_serializer_class(self):
@@ -143,7 +143,8 @@ class BuildingMinInfoAPIViewSet(MinViewSet):
 
 
 class LiftsAPIViewSet(LiftsViewSet):
-    queryset = Lift.objects.select_related("house").all()
+    """Выводим всю инфу о лифтах"""
+    queryset = Lift.objects.select_related("house").only("id", "house__id")
 
     def get_serializer_class(self):
         if self.action == "list":
