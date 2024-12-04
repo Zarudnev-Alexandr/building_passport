@@ -164,7 +164,7 @@ class House(models.Model):
         blank=True,
         verbose_name="Физический износ, %"
     )
-    foundation_last_repair_year = models.DateField(
+    foundation_last_repair_year = models.IntegerField(
         null=True,
         blank=True,
         verbose_name="Год проведения последнего капитального ремонта "
@@ -234,7 +234,7 @@ class House(models.Model):
         blank=True,
         verbose_name="Физический износ, наружных стен, %"
     )
-    facade_last_repair_year = models.DateField(
+    facade_last_repair_year = models.IntegerField(
         null=True,
         blank=True,
         verbose_name="Год проведения последнего капитального ремонта"
@@ -282,8 +282,8 @@ class House(models.Model):
         null=True,
         blank=True,
         max_length=255,
-        choices=floor_structure_choice,
-        verbose_name="Конструкция перекрытий"
+        choices=roof_shape_choice,
+        verbose_name="Форма крыши"
     )
     roof_structure_type = models.CharField(
         null=True,
@@ -296,7 +296,7 @@ class House(models.Model):
         blank=True,
         verbose_name="Физический износ, %"
     )
-    roof_last_repair_year = models.DateField(
+    roof_last_repair_year = models.IntegerField(
         null=True,
         blank=True,
         verbose_name="Год проведения последнего капитального ремонта"
@@ -325,7 +325,7 @@ class House(models.Model):
         blank=True,
         verbose_name="Физический износ, %"
     )
-    roof_cover_last_repair_year = models.DateField(
+    roof_cover_last_repair_year = models.IntegerField(
         null=True,
         blank=True,
         verbose_name="Год проведения последнего капитального ремонта"
@@ -362,7 +362,7 @@ class House(models.Model):
         blank=True,
         verbose_name="Физический износ, %"
     )
-    element_last_repair_year = models.DateField(
+    element_last_repair_year = models.IntegerField(
         null=True,
         blank=True,
         verbose_name="Год проведения последнего капитального ремонта"
@@ -372,7 +372,7 @@ class House(models.Model):
         blank=True,
         verbose_name="Физический износ, %"
     )
-    heating_last_repair_year = models.DateField(
+    heating_last_repair_year = models.IntegerField(
         null=True,
         blank=True,
         verbose_name="Год проведения последнего капитального ремонта"
@@ -446,7 +446,7 @@ class House(models.Model):
         blank=True,
         verbose_name="Физический износ, %"
     )
-    stoves_last_repair_year = models.DateField(
+    stoves_last_repair_year = models.IntegerField(
         null=True,
         blank=True,
         verbose_name="Год проведения последнего капитального ремонта"
@@ -456,7 +456,7 @@ class House(models.Model):
         blank=True,
         verbose_name="Физический износ, %"
     )
-    cold_water_last_repair_year = models.DateField(
+    cold_water_last_repair_year = models.IntegerField(
         null=True,
         blank=True,
         verbose_name="Год проведения последнего капитального ремонта"
@@ -521,7 +521,7 @@ class House(models.Model):
         blank=True,
         verbose_name="Физический износ, %"
     )
-    hot_water_last_repair_year = models.DateField(
+    hot_water_last_repair_year = models.IntegerField(
         null=True,
         blank=True,
         verbose_name="Год проведения последнего капитального ремонта"
@@ -580,7 +580,7 @@ class House(models.Model):
         blank=True,
         verbose_name="Физический износ, %"
     )
-    wastewater_last_repair_year = models.DateField(
+    wastewater_last_repair_year = models.IntegerField(
         null=True,
         blank=True,
         verbose_name="Год проведения последнего капитального ремонта"
@@ -603,7 +603,7 @@ class House(models.Model):
         max_length=200,
         verbose_name="Материал теплоизоляции сети"
     )
-    gas_last_repair_year = models.DateField(
+    gas_last_repair_year = models.IntegerField(
         null=True,
         blank=True,
         verbose_name="Год проведения последнего капитального ремонта"
@@ -629,7 +629,7 @@ class House(models.Model):
         blank=True,
         verbose_name="Физический износ, %"
     )
-    electricity_last_repair_year = models.DateField(
+    electricity_last_repair_year = models.IntegerField(
         null=True,
         blank=True,
         verbose_name="Год проведения последнего капитального ремонта"
