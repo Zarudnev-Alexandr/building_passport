@@ -689,9 +689,15 @@ class House(models.Model):
         blank=True,
         verbose_name="Дата ввода в эксплуатацию"
     )
+    meter_state_choice = (
+        ("в работе", "в работе"),
+        ("в резерве", "в резерве"),
+        ("ремонт", "ремонт"),
+    )
     meter_state = models.CharField(
         null=True,
         blank=True,
+        choices=meter_state_choice,
         max_length=200,
         verbose_name="Состояние"
     )
