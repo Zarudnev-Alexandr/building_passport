@@ -9,11 +9,14 @@
     "ag-grid-community": "^32.3.3",
     "ag-grid-react": "^32.3.3",
     "axios": "^1.7.8",
+    "bootstrap": "^5.3.3",
     "js-cookie": "^3.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.2",
     "react-scripts": "5.0.1",
+    "slick-carousel": "^1.8.1",
+    "suggestions-jquery": "^22.6.0",
     "web-vitals": "^2.1.4",
     "xlsx": "^0.18.5"
   },
@@ -40,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "sass": "^1.83.4"
   }
 }

@@ -1,34 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginPage from './Login';
+import MainPage from './pages/Main';
 import TechPass from './TechPass';
+import LoginPage from './Login';
+import Header from './components/Header';
 import PrivateRoute from './PrivateRoute';
 import { useTokenRefresher } from './apiClient';
+import { AuthProvider } from './context/AuthContext';
+import './css/style.scss';
 
 function App() {
   useTokenRefresher();
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route
-          path="/techpass"
-          element={
-            <PrivateRoute>
-              <TechPass />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <TechPass />
-            </PrivateRoute>
-          }
-        />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/techpass"
+            element={
+              <PrivateRoute>
+                <TechPass />
+              </PrivateRoute>
+            }
+          />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

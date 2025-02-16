@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
+import AuthContext from './context/AuthContext';
 import './LoginPage.css';
 import config from './config';
 
@@ -10,6 +11,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const { login } = useContext(AuthContext);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -28,10 +30,9 @@ const Login = () => {
             const { access } = response.data;
             const { refresh } = response.data;
 
-            Cookies.set('token', access, { expires: 3650   });
-            Cookies.set('refresh_token', refresh, { expires: 3650   });
+            await login(access, refresh);
 
-            navigate('/techpass');
+            navigate('/');
         } catch (error) {
             setError('Неверный логин или пароль');
         }

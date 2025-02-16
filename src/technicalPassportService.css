@@ -200,7 +200,7 @@
   display: grid;
   grid-template-columns: repeat(2, 500px);
   gap: 100px;
-  width: 1100px;
+  width: 1200px;
   padding: 70px;
   border: 2px solid #007acc;
   border-radius: 10px;
@@ -282,7 +282,7 @@
 }
 
 
-.modal {
+.modalTechPass {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -292,7 +292,7 @@
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  z-index: 1000000000;
   animation: fadeIn 0.3s ease-out;
   width: 400px;
   max-height: 300px;
@@ -302,11 +302,11 @@
   text-align: left;
 }
 
-.modal p {
+.modalTechPass p {
   margin-bottom: 10px;
 }
 
-.modal ul {
+.modalTechPass ul {
   padding-left: 20px;
   margin: 0;
 }
