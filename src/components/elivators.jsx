@@ -105,7 +105,7 @@ const Elevators = ({ addressId }) => {
     return (
         <>
             {isModalVisible && (
-                <div className="modal">
+                <div className="modalTechPass">
                     {missingFields.length > 0 ? (
                         <>
                             <p>Данные не внесены:</p>

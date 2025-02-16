@@ -938,8 +938,8 @@ const TableTechPass = ({ data }) => {
                             backgroundColor: 'white',
                             padding: '20px',
                             borderRadius: '10px',
-                            width: '60%',
-                            height: '50%',
+                            width: '70%',
+                            height: '60%',
                             boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
                             overflow: 'hidden',
                             zIndex: 1001,
@@ -959,6 +959,7 @@ const TableTechPass = ({ data }) => {
                         <button
                             style={{
                                 marginTop: '10px',
+                                marginBottom: '10px',
                                 padding: '10px 20px',
                                 backgroundColor: '#007bff',
                                 color: 'white',

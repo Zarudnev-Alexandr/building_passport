@@ -562,7 +562,7 @@ const TechnicalPassportService = () => {
                     {activeTab === "technicalPassport" && (
                         <>
                             {isModalVisible && (
-                                <div className="modal">
+                                <div className="modalTechPass">
                                     {missingFields.length > 0 ? (
                                         <>
                                             <p>Данные не внесены:</p>
@@ -2704,7 +2704,7 @@ const TechnicalPassportService = () => {
                                         }}
                                         className="form-input"
                                     >
-                                        <option value="" disabled>
+                                        <option value="" >
                                             Выберите адрес
                                         </option>
                                         {buildingsList.map((building) => (
