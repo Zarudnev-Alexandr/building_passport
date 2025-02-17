@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("buildings.urls"), name="Здания"),
     path("", include("core.urls"), name="Авторизация"),
+    path("", include("ADS.urls"), name="АДС"),
 
     path(
         "swagger/",
