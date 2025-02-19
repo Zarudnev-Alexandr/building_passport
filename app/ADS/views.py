@@ -4,8 +4,11 @@ from rest_framework.response import Response
 from django.utils import timezone
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
-from .models import Address, Seti, Executor, Specialist
-from .serializers import AddressSerializer, SetiSerializer, ExecutorSerializer, SpecialistSerializer
+from .models import Address, Seti, Executor, Specialist, DispatcherFullName
+from .serializers import (
+    AddressSerializer, SetiSerializer, ExecutorSerializer,
+    SpecialistSerializer, DispatcherFullNameSerializer
+)
 
 
 class AddressViewSet(viewsets.ReadOnlyModelViewSet):
@@ -103,6 +106,14 @@ class ExecutorViewSet(viewsets.ModelViewSet):
     serializer_class = ExecutorSerializer
 
 
-class SpecialistViewSet(viewsets.ReadOnlyModelViewSet):
+class SpecialistViewSet(viewsets.ModelViewSet):
     queryset = Specialist.objects.all()
     serializer_class = SpecialistSerializer
+
+
+class DispatcherFullNameViewSet(viewsets.ModelViewSet):
+    """
+    Представление для получения данных о диспетчерах.
+    """
+    queryset = DispatcherFullName.objects.all()
+    serializer_class = DispatcherFullNameSerializer

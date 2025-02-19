@@ -1,7 +1,8 @@
 from django.urls import path
 from rest_framework import routers
 from .views import (
-    AddressViewSet, SetiViewSet, ExecutorViewSet, SpecialistViewSet
+    AddressViewSet, SetiViewSet, ExecutorViewSet,
+    SpecialistViewSet, DispatcherFullNameViewSet
 )
 
 router = routers.SimpleRouter()
@@ -32,6 +33,13 @@ router.register(
     r"api/ADS/specialists",
     SpecialistViewSet,
     basename="specialist"
+)
+
+# Диспетчер
+router.register(
+    r"api/ADS/dispatchers",
+    DispatcherFullNameViewSet,
+    basename="dispatcher"
 )
 
 urlpatterns = [
