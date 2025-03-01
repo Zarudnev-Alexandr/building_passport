@@ -115,17 +115,17 @@ const Header = () => {
             <div className={'menu ' + (isMenuActive ? 'menu--active' : '')}>
                 <ui className='menu-list'>
                     <li>
-                        <NavLink className='menu-list__link' to='/about'>
+                        <NavLink className='menu-list__link' to='/about' onClick={closeMenu}>
                             О платформе
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink className='menu-list__link' to='/news'>
+                        <NavLink className='menu-list__link' to='/news' onClick={closeMenu}> 
                             Новости
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink className='menu-list__link' to='/rules'>
+                        <NavLink className='menu-list__link' to='/rules' onClick={closeMenu}>
                             Авторские права
                         </NavLink>
                     </li>
