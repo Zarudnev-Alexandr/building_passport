@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/Main';
+import Platfornpage from './pages/AboutPlatform';
 import TechPass from './TechPass';
 import LoginPage from './Login';
 import Header from './components/Header';
@@ -18,6 +19,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/about" element={<Platfornpage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route
             path="/techpass"

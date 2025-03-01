@@ -78,16 +78,6 @@ const Main = () => {
                 </div>
             </section>
 
-            <section className="ForJkx__functional">
-                <div className="container">
-                    <div className="ForJkx__functional-inner">
-                        <h1 className="ForJkx__functional-title">Модель информационного взаимодействия</h1>
-                        <div className="ForJkx__diagram-container">
-                            <img src={modelPhoto} alt="" />
-                        </div>
-                    </div>
-                </div>
-            </section>
             <Footer />
         </>
     )
