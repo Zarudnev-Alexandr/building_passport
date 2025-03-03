@@ -4,6 +4,7 @@ import MainPage from './pages/Main';
 import Platfornpage from './pages/AboutPlatform';
 import TechPass from './TechPass';
 import LoginPage from './Login';
+import PassPage from './pages/PassPage';
 import Header from './components/Header';
 import PrivateRoute from './PrivateRoute';
 import { useTokenRefresher } from './apiClient';
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/about" element={<Platfornpage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/pagePass" element={<PassPage />} />
           <Route
             path="/techpass"
             element={
