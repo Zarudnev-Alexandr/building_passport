@@ -30,8 +30,8 @@ const Main = () => {
                                 <h1 className="ForJkx__card-content__title">Электронный паспорт здания.</h1>
                                 <p className="ForJkx__card-content__descr">Общие технические параметры, характеристики конструктивных элементов, инженерных систем/сетей,  лифтов,  приборов учета.</p>
                             </div>
-                            <NavLink className="ForJkx__card-link" to='/'>
-                                <input type="button" className="ForJkx__card-btn" value="В разработке" />
+                            <NavLink className="ForJkx__card-link" to='/pagePass'>
+                                <input type="button" className="ForJkx__card-btn" value="Перейти к сервису" />
                             </NavLink>
                         </div>
                         <div className="ForJkx__card">
