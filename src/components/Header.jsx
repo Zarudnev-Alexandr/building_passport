@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import { fetchWithToken } from '../apiClient';
 import config from '../config';
 import AuthContext from '../context/AuthContext';
+import logo from '../images/logo.png'
 
 const Header = () => {
     const { auth, logout } = useContext(AuthContext);
@@ -103,7 +104,7 @@ const Header = () => {
 
                         <div className='logo__box'>
                             <Link className='logo__link' to='/'>
-                                {/* <img src={logo} alt='logo' /> */}
+                                <img src={logo} alt='logo' />
                             </Link>
                         </div>
                         <div className='' />
