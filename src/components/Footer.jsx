@@ -1,4 +1,4 @@
-// import logo from "../images/logo.svg";
+import logo from '../images/logo.png'
 import { Link, NavLink } from 'react-router-dom';
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
                         <div className="Footer__content-item">
                             <Link className='Footer__logo-link' to='/'>
                                 <div className="Footer__logo-box">
-                                    {/* <img className="Footer__logo-img" src={logo} alt='logo'/> */}
+                                    <img className="Footer__logo-img" src={logo} alt='logo'/>
                                 </div>
                             </Link>
                         </div>
