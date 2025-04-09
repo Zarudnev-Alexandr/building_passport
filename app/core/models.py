@@ -29,6 +29,10 @@ class Profile(models.Model):
         choices=JOB_TITLE_CHOICES,
     )
 
+    wear_access = models.BooleanField(
+        default=False, verbose_name="Доступ к 'Расчёт износа здания'"
+    )
+
     db_access = models.BooleanField(
         default=False,
         verbose_name="Доступ к 'Добавлению информации в БД'",

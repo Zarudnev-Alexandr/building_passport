@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'storages',
     'core',
     'buildings',
+    'CivilBuildingWear',
 ]
 
 MIDDLEWARE = [
