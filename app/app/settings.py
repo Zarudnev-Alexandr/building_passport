@@ -22,6 +22,18 @@ if DEBUG:
         # Для самого Django
         "http://localhost:8000",
         "http://127.0.0.1:8000",
+        "https://univerzdaniya.ru"
+        # Для React
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:5860",
+    ]
+else:
+    CSRF_TRUSTED_ORIGINS = [
+        # Для самого Django
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+        "https://univerzdaniya.ru"
         # Для React
         "http://localhost:3000",
         "http://127.0.0.1:3000",
@@ -95,6 +107,13 @@ ASGI_APPLICATION = "app.asgi.application"
 
 match DEBUG:
     case True:
+        DATABASES = {
+            "default": {
+                "ENGINE": "django.db.backends.sqlite3",
+                "NAME": BASE_DIR / "db.sqlite3",
+            }
+        }
+    case False:
         DATABASES = {
             "default": {
                 "ENGINE": "django.db.backends.sqlite3",
@@ -210,15 +229,16 @@ REST_FRAMEWORK = {
     ],
 }
 
-if not DEBUG:
-    REST_FRAMEWORK.update(
-        {
-            "DEFAULT_RENDERER_CLASSES": (
-                "rest_framework.renderers.JSONRenderer",
-                "drf_excel.renderers.XLSXRenderer",
-            )
-        }
-    )
+#хз нужно наверное
+# if not DEBUG:
+#     REST_FRAMEWORK.update(
+#         {
+#             "DEFAULT_RENDERER_CLASSES": (
+#                 "rest_framework.renderers.JSONRenderer",
+#                 "drf_excel.renderers.XLSXRenderer",
+#             )
+#         }
+#     )
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
