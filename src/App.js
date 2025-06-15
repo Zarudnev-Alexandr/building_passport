@@ -7,6 +7,7 @@ import LoginPage from './Login';
 import PassPage from './pages/PassPage';
 import Header from './components/Header';
 import PrivateRoute from './PrivateRoute';
+import RulesPage from './pages/Rules';
 import { useTokenRefresher } from './apiClient';
 import { AuthProvider } from './context/AuthContext';
 import './css/style.scss';
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<Platfornpage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/pagePass" element={<PassPage />} />
+          <Route path='/rules' element={<RulesPage />} />
           <Route
             path="/techpass"
             element={

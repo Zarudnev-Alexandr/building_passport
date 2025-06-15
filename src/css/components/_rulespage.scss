@@ -1,0 +1,53 @@
+.RulesPage {
+    &__Title {
+        margin-top: 150px;
+        text-align: center;
+        font-size: 48px;
+        font-weight: bold;
+        color: #333;
+        font-family: Arial, sans-serif;
+    }
+
+    &__PhotoGallery {
+        display: grid;
+        grid-template-columns: repeat(2, 400px); 
+        gap: 20px 50px; 
+        justify-items: center; 
+        align-items: center;
+       
+    }
+
+    &__ForCenter{
+        margin-top: 30px;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    &__PhotoGalleryItem {
+        max-width: 100%; 
+        height: auto; 
+        width: 400px;
+    }
+
+
+    &__PhotoCentered {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; 
+        margin-bottom: 50px;
+    }
+    
+    &__CenteredItem {
+        flex: 0 0 40%; 
+    }
+    
+    &__CenteredItem img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
+   
+}
